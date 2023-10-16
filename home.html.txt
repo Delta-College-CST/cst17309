@@ -1,0 +1,9 @@
+<html>  
+<head>   
+<title> My Home Page </title>  
+<body> 
+<h3>My Home Page</h3> 
+<a href="mailto:dude@example.com">Click to send email</a>  
+</body>  
+</head>  
+</html>
