@@ -7,7 +7,8 @@ adjective = input("Enter an adjective: ")
 noun1 = input("Enter a plural noun: ")
 noun2 = input("Enter any noun: ")
 
-# Print familiar rhyme\
+# Print familiar rhyme
+print (name, ", here is your rhyme:")
 print ("Roses are ", adjective)
 print (noun1, " is blue")
 print ("I can't start my day without", noun2)
