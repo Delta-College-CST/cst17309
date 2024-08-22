@@ -1,9 +1,24 @@
 # This program prompts the user for a two character state code,
 # validates it, and returns trivia related to the state.
 
-statefile = open("statefacts.txt", "r") # Open file for reading
+# This function returns the "ordinality" of a number
+def numberOrdinal(num):
+    intNum = int(num)
+    if intNum >= 11 or intNum <= 13:
+        ordNum = num + "th"
+    elif intNum % 10 == 1:
+        ordNum = num + "st"
+    elif intNum % 10 == 2:
+        ordNum = num + "nd"
+    elif intNum % 10 == 3:
+        ordNum = num + "rd"
+    else:
+        ordNum = num + "th" 
+    return ordNum
 
-stateCodeChoice = input("Enter state code: ")
+statefile = open("statefacts.txt", "r")        # Open file for reading
+
+stateCodeChoice = input("Enter state code: ")  # Read target state
 
 found = False    # For error checking
 
@@ -14,18 +29,8 @@ for line in statefile:
     code, name, nickname, capital, startdate, \
     enterNum, animal, bird, flower = line.split(",")
 
-    # Determine ordinal number for state entry number
-    intNum = int(enterNum)
-    if intNum >= 11 or intNum <= 13:
-        ordNum = enterNum + "th"
-    elif intNum % 10 == 1:
-        ordNum = enterNum + "st"
-    elif intNum % 10 == 2:
-        ordNum = enterNum + "nd"
-    elif intNum % 10 == 3:
-        ordNum = enterNum + "rd"
-    else:
-        ordNum = enterNum + "th"        
+    # Determine ordinal number for state entry number 
+    ordNum = numberOrdinal(enterNum)
 
     # Match state code - if matches, write all related info
     if stateCodeChoice == code:
