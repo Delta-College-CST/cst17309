@@ -5,7 +5,7 @@ htmlfile = open("home.html.txt", "r")   # Open file for reading
 # Perform file processing loop until end
 for aLine in htmlfile:
 
-    # Determine if 'mailto' tag in current HTML code lien
+    # Determine if 'mailto' tag in current HTML code line
     if "mailto" in aLine:
         
         # Mark beginning and end of email message
